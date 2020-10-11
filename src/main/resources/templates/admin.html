@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+
+<h1>Welcome Admin</h1>
+
+<h3 th:text="${msg}" th:if="${msg != null}"></h3>
+
+<h3>Add Image:</h3>
+<form action="/addImage" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Please input name"><br>
+    <input type="file" name="image"><br>
+    <select name="category.id">
+        <option th:each="category: ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+    </select><br>
+    <input type="submit" value="Add Image">
+</form>
+
+<h3>Add Category:</h3>
+<form action="/addCategory" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Please input name"><br>
+    <input type="text" name="info" placeholder="Please input info"><br>
+    <textarea  name="description" placeholder="Please input description"></textarea><br>
+    <input type="file" name="image"><br>
+    <input type="submit" value="Add Category">
+</form>
+
+<a href="/">RETRO - CARS</a>
+</body>
+</html>

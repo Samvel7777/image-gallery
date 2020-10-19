@@ -2,8 +2,6 @@ package com.example.imagegallery.controller;
 
 import com.example.imagegallery.model.Category;
 import com.example.imagegallery.model.Image;
-import com.example.imagegallery.repository.CategoryRepository;
-import com.example.imagegallery.repository.ImageRepository;
 import com.example.imagegallery.service.CategoryService;
 import com.example.imagegallery.service.ImageService;
 import lombok.RequiredArgsConstructor;

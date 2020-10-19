@@ -29,8 +29,9 @@
 <body>
 
 <nav>
+    <header th:insert="fragments/general.html :: lang"></header>
     <div class="logo">
-        <a href="index.html">RETRO - <em>CARS</em></a>
+        <a href="index.html" th:text="#{car.retro}">RETRO - <em>CARS</em></a>
     </div>
     <div class="menu-icon">
         <span></span>
@@ -41,7 +42,7 @@
     <div class="video-overlay"></div>
     <div class="video-content">
         <div class="inner">
-            <h1>Welcome to <em>RETRO - CARS</em></h1>
+            <h1 th:text="#{car.retro.welcome}">Welcome to <em>RETRO - CARS</em></h1>
             <div class="scroll-icon">
                 <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
             </div>
@@ -58,7 +59,6 @@
         <div class="col-md-4 col-sm-6" th:each="category: ${categories}">
             <div class="portfolio-item">
                 <a th:href="@{/imageView{categoryName}(categoryName = ${category.name})}">
-<!--                <a href="/imageView?categoryName=" th:value="'dfsfsd'+${category.name}" >-->
                     <div class="thumb" >
                         <div class="hover-effect">
                             <div class="hover-content">
